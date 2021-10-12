@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>
+Assigment    
+</title>
+</head>
+<body>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-10 m-auto bg-light p-5"> <!--margin kay liye-->
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h1>Assignment 2<h1>
+                    <h4>Marksheet</h4>                            
+                    <h7>Develop by Fahad Siddiqui</h7>                            
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-12">
+                <table class="table" id="tblper">
+                    <thead>
+                        <tr>
+                        <th>Subject</th>
+                        <th>Max</th>
+                        <th>Pass Marks</th>
+                        <th>Marks Obtained</th>
+                        <th>%</th>
+                        <th>Remarks</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>URDU</td>
+                            <td>100</td>
+                            <td>36</td>
+                            <td><input type="number"  class="form-control" id="mo_urdu" onchange="calculate();"></td>
+                            <td id="per_urdu"></td>
+                            <td id="rem_urdu"></td>
+                        </tr>
+                        <tr>
+                            <td>ENGLISH</td>
+                            <td>100</td>
+                            <td>36</td>
+                            <td><input type="number"  class="form-control" id="mo_eng" onchange="calculate();"></td>
+                            <td id="per_eng"></td>
+                            <td id="rem_eng"></td>
+                        </tr>
+                        <tr>
+                            <td>ISLAMIC EDUCATION</td>
+                            <td>50</td>
+                            <td>18</td>
+                            <td><input type="number"  class="form-control" id="mo_isl" onchange="calculate();"></td>
+                            <td id="per_isl"></td>
+                            <td id="rem_isl"></td>
+                        </tr>
+                        <tr>
+                            <td>ACCOUNTING</td>
+                            <td>100</td>
+                            <td>36</td>
+                            <td><input type="number"  class="form-control" id="mo_acc" onchange="calculate();"></td>
+                            <td id="per_acc"></td>
+                            <td id="rem_acc"></td>
+                        </tr>
+                        <tr>
+                            <td>COMMERCE</td>
+                            <td>75</td>
+                            <td>25</td>
+                            <td><input type="number"  class="form-control" id="mo_com" onchange="calculate();"></td>
+                            <td id="per_com"></td>
+                            <td id="rem_com"></td>
+                        </tr>
+                        <tr>
+                            <td>ECONOMICS</td>
+                            <td>75</td>
+                            <td>25</td>
+                            <td><input type="number"  class="form-control" id="mo_eco" onchange="calculate();"></td>
+                            <td id="per_eco"></td>
+                            <td id="rem_eco"></td>
+                        </tr>
+                        <tr>
+                            <td>MATHEMATICS</td>
+                            <td>50</td>
+                            <td>18</td>
+                            <td><input type="number"  class="form-control" id="mo_math" onchange="calculate();"></td>
+                            <td id="per_math"></td>
+                            <td id="rem_math"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr style="font-size: large;font-weight: 700;">
+                            <td> Total </td>
+                            <td>550</td>
+                            <td></td>
+                            <td id="total_marks"></td>
+                            <td id="total_per"></td>
+                            <td id="total_remarks"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            </div>    
+        </div>
+    </div>
+</div>
+</body>
+<script src="operator.js"></script>
+</html>
