@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>
+Assigment    
+</title>
+</head>
+<body>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-10 m-auto bg-light p-5"> <!--margin kay liye-->
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h1>Coding Week<h1>
+                    <h4>Tasks</h4>                            
+                    <h7>Develop by Fahad Siddiqui</h7>                            
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                
+                <div class="col-md-12">
+                    <p>1. Write a JavaScript program to display the current day and time in the following format.</p>
+               <strong id="today"></strong>
+               <br>
+               <strong id="time"></strong>            
+                </div>            
+            </div>    
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>2. Write a JavaScript program to get the current date.</p>
+                    <button class="btn btn-primary" onclick="getDate()">Get Date</button>
+                    <br>
+               <strong id="current_date"></strong>
+                </div>            
+            </div>    
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>3. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides</p>
+                    <div class="row">
+                    <div class="col-md-3">
+                        <label>Side 1</label>
+                        <input type="number" class="form-control" id="side1">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Side 2</label>
+                        <input type="number" class="form-control" id="side2">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Side 3</label>
+                        <input type="number" class="form-control" id="side3">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Result</label>
+                        <input class="form-control" id="result" readonly>
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-primary" onclick="getArea()">Get Area</button>
+                </div>            
+            </div>    
+
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>4 Write a JavaScript program to rotate the string 'Saylani' in 
+                        right direction by periodically removing one letter from the end of the string and attaching it to the front.</p>
+                Output : <p id="rotate_text" class="font-weight-bold d-inline-block"></p>
+                <br>
+                <button class="btn btn-primary" onclick="getReverse()">Run Program</button>
+                </div>            
+            </div>    
+
+            <hr class="my-3">
+            <div class="row">
+                <p>5. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar. </p>
+                <div class="col-md-4">
+                <br>
+                <label>Year</label>
+                <input type="text" class="form-control" id="leap_year">
+                <br>
+                Output : <p id="result_leap_year" class="font-weight-bold d-inline-block"></p>
+                <br>
+                <button class="btn btn-primary" onclick="getLeapYear()">Run Program</button>
+                </div>            
+            </div>    
+
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>6. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050. </p>
+                    <p id="result_sunday" class="font-weight-bold d-inline-block"></p>    
+                <br>
+                <button class="btn btn-primary" onclick="getSunday()">Run Program</button>
+                </div>            
+            </div>    
+
+            <hr class="my-3">
+            <div class="row">
+                    <p>7. Write a JavaScript program where the program takes a random Number between 1 to 10, 
+                        the user is then prompted to input a guess number. If the user input matches with guess number, 
+                        the program will display a message "Good Work" otherwise display a message "Not matched".</p>
+                        <div class="col-md-4">
+                            <br>
+                            <label>Number</label>
+                            <input type="number" class="form-control" id="guess_no">            
+                <br>
+                Output : <p id="result_guess_no" class="font-weight-bold d-inline-block"></p>
+                            <br>        
+                <button class="btn btn-primary" onclick="getGuessNo()">Run Program</button>
+                </div>            
+            </div>
+
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-">
+                    <p>8. Write a JavaScript program to calculate days left until next 14 August.</p>
+                    Output : <p id="result_14_august" class="font-weight-bold d-inline-block"></p>
+                <br>
+
+                <button class="btn btn-primary" onclick="get14August()">Run Program</button>
+                </div>            
+            </div>
+
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>9. Write a JavaScript program to calculate multiplication and division of two numbers.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Number 1</label>
+                            <input type="number" class="form-control" id="num1">
+                        </div>
+                        <div class="col-md-2">
+                            <label>Operators</label>
+                            <select id="operator" class="form-control">
+                            <option value="+">+</option>   
+                            <option value="-">-</option>   
+                            <option value="*">*</option>   
+                            <option value="/">/</option>   
+                        </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Number 2</label>
+                            <input type="number" class="form-control" id="num2">
+                        </div>
+                        <div class="col-md-3">
+                            <label>Result</label>
+                            <input class="form-control" id="cal_result" readonly>
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn btn-primary" onclick="Calculation()">Caculate</button>
+                        </div>
+                 </div>
+                </div>            
+            </div>
+            
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>10. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit. 
+                        [ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ]</p>
+                <br>
+                </div>            
+            </div>
+    
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>11. Write a JavaScript program to compute the sum of the two given Numbers. 
+                        If the two values are same, then returns triple their sum.</p>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Number 1</label>
+                        <input type="number" class="form-control" id="t_num1">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Number 2</label>
+                        <input type="number" class="form-control" id="t_num2">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Result</label>
+                        <input class="form-control" id="result_triple" readonly>
+                    </div>
+             </div>
+             <button class="btn btn-primary" onclick="getTriple()">Caculate Triple</button>
+                </div>            
+            </div>
+    
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>12. Write a JavaScript program to check whether a given Number is within 20 of 100 or 400.
+                    </p>
+                <br>
+                <button class="btn btn-primary" onclick="getArea()">Run Program</button>
+                </div>            
+            </div>
+    
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>13. Write a JavaScript program to find the largest of three given Numbers.</p>
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Number 1</label>
+                        <input type="number" class="form-control" id="l_num1">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Number 2</label>
+                        <input type="number" class="form-control" id="l_num2">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Number 3</label>
+                        <input type="number" class="form-control" id="l_num3">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Result</label>
+                        <input class="form-control" id="result_l" readonly>
+                    </div>
+             </div>
+             <br>
+             <button class="btn btn-primary" onclick="getThree()">Run Program</button>
+                </div>            
+            </div>
+    
+            <hr class="my-3">
+            <div class="row">
+                <p>14. Write a JavaScript program to capitalize the first letter of each word of a given string.</p>
+                <div class="col-md-4">
+                    <label>Text</label>
+                    <input type="text" class="form-control" id="letter">
+                    <br>
+                <button class="btn btn-primary" onclick="getCapitalize()">Run Program</button>
+                </div>            
+            </div>
+    
+            <hr class="my-3">
+            <div class="row">
+                <p>15. Write a JavaScript program to convert a given days to hours and minutes.
+                    i.e: 1 day equals 24hr</p>
+                    <div class="col-md-4">
+                        <label>days</label>
+                        <input type="number" class="form-control" id="days">
+                        <p id="result_days" class="font-weight-bold"></p>
+                    <button class="btn btn-primary" onclick="getHours()">Run Program</button>
+                    </div>            
+            </div>
+    
+            <hr class="my-3">
+            <div class="row">
+                <p>16. Write a JavaScript program to reverse the elements of a given array, you can not use Array.reverse() do it with loop.</p>
+                <div class="col-md-4">
+                    <label>Text</label>
+                    <input type="text" class="form-control" id="arr_rev">
+                    <p id="result_arr_rev" class="font-weight-bold"></p>
+                <button class="btn btn-primary" onclick="getArrReverse()">Run Program</button>
+            </div>            
+            </div>
+
+                <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        17. Write a JavaScript program to find the larger value between the first or last
+                         and set all the other elements with that value. Display the new array.</p>
+                         <div class="row">
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" id="arr_num1">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" id="arr_num2">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" id="arr_num3">
+                            </div>
+                     </div>
+                     <br>
+                     <div class="row">
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="arr_res_num1" readonly>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="arr_res_num2" readonly>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="arr_res_num3" readonly>
+                        </div>
+                            </div>
+
+                        <br>
+                <button class="btn btn-primary" onclick="getLargerValue()">Run Program</button>
+                </div>            
+            </div>
+
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>18. Write a JavaScript program to find the kth greatest element of a given array of Numbers</p>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="kth_num1">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="kth_num2">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="kth_num3">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="kth_num4">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="kth_num5">
+                        </div>
+                 </div>
+                 <br>
+                 <div class="row">
+                    <div class="col-md-2">
+                        <input type="number" class="form-control" id="kth_res_num1" >
+                    </div>
+                        </div>
+                                <p id="kth_display"></p>
+                <br>
+                <button class="btn btn-primary" onclick="getKTH()">Run Program</button>
+                </div>            
+            </div>
+
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>19. Write a JavaScript program to find the number which appears most in a given array of Numbers.                    </p>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="ma_num1">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="ma_num2">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="ma_num3">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="ma_num4">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="ma_num5">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="ma_num6">
+                        </div>
+                 </div>
+                 <br>
+                 <div class="row">
+                    <div class="col-md-2">
+                        <input type="number" class="form-control" id="ma_res_num1" readonly>
+                    </div>
+                        </div>
+
+                <br>
+                <button class="btn btn-primary" onclick="getMostAppears()">Run Program</button>
+                </div>            
+            </div>
+
+            
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>20. Write a JavaScript program to replace all the numbers with a specified number of a given array of Numbers.</p>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="r_num1">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="r_num2">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="r_num3">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="r_num4">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="r_num5">
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control" id="r_num6">
+                        </div>
+                 </div>
+                 <br>
+                 <div class="row">
+                    <div class="col-md-2">
+                        <label>Old Value</label>
+                        <input type="number" class="form-control" id="r_old_num1">
+                    </div>
+                    <div class="col-md-2">
+                        <label>New Value</label>
+                        <input type="number" class="form-control" id="r_new_num1">
+                    </div>
+                        </div>
+                <br>
+                <button class="btn btn-primary" onclick="getReplaceAll()">Run Program</button>
+                </div>            
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="operator.js"></script>
+</html>
