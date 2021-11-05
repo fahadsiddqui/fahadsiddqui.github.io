@@ -6,11 +6,6 @@ function post_create()
     let age = document.getElementById('age').value;
     let roll_no = document.getElementById('roll_no').value;
 
-    
-
-    const data = { student_name: student_name,father_name:father_name
-    ,age:age,roll_no:roll_no };
-
     axios.post('https://pacific-coast-71393.herokuapp.com/user', {
         student_name: student_name,father_name:father_name
         ,age:age,roll_no:roll_no
@@ -77,7 +72,22 @@ function get_record($obj){
 }
 
 function update_student(){
+  let student_name = document.getElementById('student_name').value;
+  let father_name = document.getElementById('father_name').value;
+  let age = document.getElementById('age').value;
+  let roll_no = document.getElementById('roll_no').value;
 
+  let id = document.getElementById('student_id').value;
+  axios.put('https://pacific-coast-71393.herokuapp.com/user/'+id, {
+    student_name: student_name,father_name:father_name
+    ,age:age,roll_no:roll_no
+})
+  .then(response => {
+    console.log(response);
+  })
+  .catch(error => {
+    console.log(err);
+  });
 }
 function delete_student(){
     let id = document.getElementById('student_id').value;
@@ -92,7 +102,6 @@ function delete_student(){
   })
   .then(function () {
     // always executed
-  });
-    
+  });    
 }
 
