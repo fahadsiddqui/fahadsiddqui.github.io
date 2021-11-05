@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>
+Assigment    
+</title>
+</head>
+<body>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-10 m-auto bg-light p-5"> <!--margin kay liye-->
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h1>Assignment 1<h1>
+                    <h4>Javascript Operators</h4>                            
+                    <h7>Develop by Fahad Siddiqui</h7>                            
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="d-flex">
+                <div style="width: 20%;">
+                    <h4>Addition</h4>
+                </div>
+            </div>
+            <hr class="my-2">
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="add_num1">Value 1</label>
+                    <input type="number" class="form-control" id="add_num1">
+                </div>
+                <div class="col-md-3">
+                    <label for="add_num2">Value 2</label>
+                    <input type="number" class="form-control" id="add_num2">
+                </div>
+                <div class="col-md-3">
+                    <label for="add_res">Result</label>
+                    <input type="text" class="form-control" id="add_res" readonly>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-primary" style="margin-top: 30px;" onclick="Add();">Addition</button>
+                </div>
+            </div>
+            <!--Subtraction-->
+            <hr class="my-4">
+            <div class="d-flex">
+                <div style="width: 20%;">
+                    <h4>Subtraction</h4>
+                </div>
+            </div>
+            <hr class="my-2">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Value 1</label>
+                    <input type="number" class="form-control" id="sub_num1">
+                </div>
+                <div class="col-md-3">
+                    <label>Value 2</label>
+                    <input type="number" class="form-control" id="sub_num2">
+                </div>
+                <div class="col-md-3">
+                    <label>Result</label>
+                    <input type="text" class="form-control" id="sub_res" readonly>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-primary" style="margin-top: 30px;" onclick="Sub();">Subtraction</button>
+                </div>
+            </div>
+            <!--Multiplication-->
+            <hr class="my-4">
+            <div class="d-flex">
+                <div style="width: 20%;">
+                    <h4>Multiplication</h4>
+                </div>
+            </div>
+            <hr class="my-2">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Value 1</label>
+                    <input type="number" class="form-control" id="mul_num1">
+                </div>
+                <div class="col-md-3">
+                    <label>Value 2</label>
+                    <input type="number" class="form-control" id="mul_num2">
+                </div>
+                <div class="col-md-3">
+                    <label>Result</label>
+                    <input type="text" class="form-control" id="mul_res" readonly>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-primary" style="margin-top: 30px;" onclick="Mul();">Multiplication</button>
+                </div>
+            </div>
+            <!--Division-->
+            <hr class="my-4">
+            <div class="d-flex">
+                <div style="width: 20%;">
+                    <h4>Division</h4>
+                </div>
+            </div>
+            <hr class="my-2">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Value 1</label>
+                    <input type="number" class="form-control" id="div_num1">
+                </div>
+                <div class="col-md-3">
+                    <label>Value 2</label>
+                    <input type="number" class="form-control" id="div_num2">
+                </div>
+                <div class="col-md-3">
+                    <label>Result</label>
+                    <input type="text" class="form-control" id="div_res" readonly>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-primary" style="margin-top: 30px;"onclick="Div();">Division</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="operator.js"></script>
+</html>
