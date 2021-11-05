@@ -83,7 +83,7 @@ function update_student(){
     ,age:age,roll_no:roll_no
 })
   .then(response => {
-    console.log(response);
+    alert(response.data)
   })
   .catch(error => {
     console.log(err);
