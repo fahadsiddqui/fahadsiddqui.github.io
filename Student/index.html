@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Student List</title>
+	<link rel="stylesheet" href="./style.css">
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<div class="container">		
+		<div class="jambotron">
+			<div class="display-6 text-center">Student List View</div>
+		</div>
+
+		<div class="s-table">
+			<div class="s-table-header text-end">
+				<div class="s-btn-group">
+					<button class="s-btn s-btn-primary" onclick="location.href='form.html'">
+						<i class="s-btn-icon me-2 fas fa-plus"></i>Add New Record
+					</button>
+				</div>
+			</div>
+			<div class="s-table-body table-responsive">
+				<table class="table table-borderless" style="width: 100%">
+					<thead class="s-thead">
+						<tr class="s-tr">
+							<td class="s-td">#</td>
+							<td class="s-td">student name</td>
+							<td class="s-td">age</td>
+							<td class="s-td">dob</td>
+							<td class="s-td">gender</td>
+							<td class="s-td">mobile</td>
+							<td class="s-td">email</td>
+							<td class="s-td">Action</td>
+						</tr>
+					</thead>
+					<tbody class="s-body" id="tblstd">
+					</tbody>
+				</table>
+			</div>
+			<div class="s-table-footer"></div>
+		</div>
+	</div>	
+</body>
+<script>
+ window.onload = function () {
+
+		get_all();
+	};
+	function get_all() {
+    axios.get('http://pacific-coast-71393.herokuapp.com/users')
+        .then(function (response) {
+            console.log(response);
+            $html = '';
+            response.data.forEach(function (data) {
+                $id = data._id;
+                console.log(data);
+                $html += '<tr>';
+                $html += '<td id="student_name_' + $id + '">' + data.student_name + '</td>';
+                $html += '<td id="father_name_' + $id + '">' + data.father_name + '</td>';
+                $html += '<td id="age_' + $id + '">' + data.age + '</td>';
+                $html += '<td id="dob_' + $id + '">' + data.dob + '</td>';
+                $html += '<td><a href="javascript:void(0)" onclick="get_record(this)" id=' + $id + '>View</td>';
+                $html += '</tr>';
+            })
+            document.getElementById('tblstd').innerHTML = $html;
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+        .then(function () {
+
+        });
+}
+
+function get_record($obj) {
+    var id = $obj.getAttribute('id');
+    let student_name = document.getElementById('student_name_' + id).innerHTML;
+    let father_name = document.getElementById('father_name_' + id).innerHTML;
+    let age = document.getElementById('age_' + id).innerHTML;
+    let roll_no = document.getElementById('dob_' + id).innerHTML;
+
+    document.getElementById('student_name').value = student_name;
+    document.getElementById('father_name').value = father_name;
+    document.getElementById('age').value = age;
+    document.getElementById('dob').value = roll_no;
+    document.getElementById('student_id').value = id;
+
+}
+</script>
+</html>

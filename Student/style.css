@@ -1,0 +1,98 @@
+@import url('./bs5/css/bootstrap.min.css');
+@import url('./fa5/css/all.min.css');
+
+
+
+*,
+*::before,
+*::after{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0; 
+}
+
+
+body{
+	background: #87ceeb14;
+}
+
+
+.jambotron{
+		margin: 20px;
+		padding: 20px;
+}
+
+
+
+.s-table{
+	margin: 50px 0;
+}
+
+.s-table-header,
+.s-table-body,
+.s-table-footer{
+	padding: 10px;
+}
+
+.s-btn{
+	background: transparent;
+	padding: 10px;
+	outline: 0;
+	border: 0;
+	border-radius: 3px;
+	display: inline-block;
+	margin-bottom: 10px: 
+}
+
+.s-btn-primary{
+	background: #fff
+
+}
+
+
+td{
+	padding: 20px !important;
+}
+
+thead,
+tr{
+	transition: .25s ease-out;
+	border-bottom: 1px solid #eee;
+}
+
+table 
+{
+    border-collapse:separate;
+    border-spacing:0 10px;
+}
+
+tbody tr{
+	cursor: pointer;
+	background: #fff;
+}
+
+tbody tr:hover{
+	background: #eeeeee3b;
+	transition: .25s ease-in;
+}
+
+
+.s-table .s-thead .s-tr,
+.s-table .s-th, .s-table .s-td,
+.s-thead .s-th, .s-thead .s-td{
+	border: none !important;
+}
+
+.s-thead .s-th, .s-thead .s-td{
+	font-weight: 100;
+	text-align: center;
+	text-transform: uppercase;
+	color: #333;
+	letter-spacing: 1px;
+	padding: 10px 0;
+
+}
+label{
+	font-size: large;
+	font-weight: 600;
+}
