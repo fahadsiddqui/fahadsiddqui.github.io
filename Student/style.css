@@ -13,7 +13,7 @@
 
 
 body{
-	background: #87ceeb14;
+	background: #7ecded66;
 }
 
 
@@ -84,7 +84,7 @@ tbody tr:hover{
 }
 
 .s-thead .s-th, .s-thead .s-td{
-	font-weight: 100;
+	font-weight: 600;
 	text-align: center;
 	text-transform: uppercase;
 	color: #333;
@@ -96,3 +96,31 @@ label{
 	font-size: large;
 	font-weight: 600;
 }
+/* button{
+	box-shadow​:​ none; 
+	​text-shadow​:​ none; 
+	​    ​background​:​ none; 
+	​    ​cursor​:​ pointer; 
+	​    ​padding​:​ ​0​; 
+	​    ​margin​:​ ​0​; 
+}
+button:focus{
+	​    ​outline​:​ none; 
+	​    ​border​:​ none; 
+
+}	 
+button::-moz-focus-inner{
+	​    ​border​:​ ​0​; 
+}	
+​[​class​^=​"fa"​]{ 
+	​    ​color​:​#​495057 
+	​} 
+	 
+	​[​class​^=​"fa"​]​:​hover​{ 
+	​    ​cursor​:​pointer; 
+	​    ​color​:​#​212529​; 
+	​}
+	​[​class​^=​"fa"​]​, 
+ ​[​class​^=​"mdi"​]{ 
+ ​    ​font-style​:​ normal ​!important​; 
+ ​} */

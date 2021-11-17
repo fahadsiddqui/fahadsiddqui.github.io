@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Student List</title>
 	<link rel="stylesheet" href="./style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="./bs5/js/bootstrap.bundle.min.js"></script>
+	<script src="./bootbox/bootbox.all.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 </head>
+
 <body>
-	<div class="container">		
+	<div class="container">
 		<div class="jambotron">
 			<div class="display-6 text-center">Student List View</div>
 		</div>
@@ -25,10 +31,10 @@
 				<table class="table table-borderless" style="width: 100%">
 					<thead class="s-thead">
 						<tr class="s-tr">
-							<td class="s-td">#</td>
-							<td class="s-td">student name</td>
-							<td class="s-td">age</td>
-							<td class="s-td">dob</td>
+							<td class="s-td">Student name</td>
+							<td class="s-td">Father name</td>
+							<td class="s-td">Age</td>
+							<td class="s-td">Dob</td>
 							<td class="s-td">gender</td>
 							<td class="s-td">mobile</td>
 							<td class="s-td">email</td>
@@ -41,52 +47,81 @@
 			</div>
 			<div class="s-table-footer"></div>
 		</div>
-	</div>	
+	</div>
 </body>
 <script>
- window.onload = function () {
+	window.onload = function () {
 
 		get_all();
 	};
 	function get_all() {
-    axios.get('http://pacific-coast-71393.herokuapp.com/users')
-        .then(function (response) {
-            console.log(response);
-            $html = '';
-            response.data.forEach(function (data) {
-                $id = data._id;
-                console.log(data);
-                $html += '<tr>';
-                $html += '<td id="student_name_' + $id + '">' + data.student_name + '</td>';
-                $html += '<td id="father_name_' + $id + '">' + data.father_name + '</td>';
-                $html += '<td id="age_' + $id + '">' + data.age + '</td>';
-                $html += '<td id="dob_' + $id + '">' + data.dob + '</td>';
-                $html += '<td><a href="javascript:void(0)" onclick="get_record(this)" id=' + $id + '>View</td>';
-                $html += '</tr>';
-            })
-            document.getElementById('tblstd').innerHTML = $html;
-        })
-        .catch(function (error) {
-            console.log(error)
-        })
-        .then(function () {
+		axios.get('https://pacific-coast-71393.herokuapp.com/users')
+			.then(function (response) {
+				console.log(response);
+				$html = '';
+				response.data.forEach(function (data) {
+					$id = data._id;
+					var date = Date(data.dob);
+					date = moment(date).format('DD-MMM-YYYY');
+					console.log(data);
+					$html += '<tr class="s-tr">';
+					$html += '<td class="s-td" id="student_name_' + $id + '">' + data.student_name + '</td>';
+					$html += '<td class="s-td" id="father_name_' + $id + '">' + data.father_name + '</td>';
+					$html += '<td class="s-td" id="age_' + $id + '">' + data.age + '</td>';
+					$html += '<td class="s-td" id="dob_' + $id + '">' + date + '</td>';
+					$html += '<td class="s-td" id="dob_' + $id + '">' + data.gender + '</td>';
+					$html += '<td class="s-td" id="dob_' + $id + '">' + data.mobile + '</td>';
+					$html += '<td class="s-td" id="dob_' + $id + '">' + data.email + '</td>';
+					$html += '<td class="s-td"><a href="javascript:void(0)" class="btn text-warning btn-sm" onclick="get_record(this)" id=' + $id + '><i class="btn-icon fas fa-edit"></i></a>';
+					$html += '<a href="javascript:void(0)" class="btn text-danger btn-sm" onclick="deleted(this)" id=' + $id + '><i class="btn-icon fas fa-times"></i></a></td>';
+					$html += '</tr>';
+				})
+				document.getElementById('tblstd').innerHTML = $html;
+			})
+			.catch(function (error) {
+				console.log(error)
+			})
+			.then(function () {
 
-        });
-}
+			});
+	}
 
-function get_record($obj) {
-    var id = $obj.getAttribute('id');
-    let student_name = document.getElementById('student_name_' + id).innerHTML;
-    let father_name = document.getElementById('father_name_' + id).innerHTML;
-    let age = document.getElementById('age_' + id).innerHTML;
-    let roll_no = document.getElementById('dob_' + id).innerHTML;
+	function get_record($obj) {
+		var id = $obj.getAttribute('id');
+		let student_name = document.getElementById('student_name_' + id).innerHTML;
+		let father_name = document.getElementById('father_name_' + id).innerHTML;
+		let age = document.getElementById('age_' + id).innerHTML;
+		let roll_no = document.getElementById('dob_' + id).innerHTML;
 
-    document.getElementById('student_name').value = student_name;
-    document.getElementById('father_name').value = father_name;
-    document.getElementById('age').value = age;
-    document.getElementById('dob').value = roll_no;
-    document.getElementById('student_id').value = id;
+		document.getElementById('student_name').value = student_name;
+		document.getElementById('father_name').value = father_name;
+		document.getElementById('age').value = age;
+		document.getElementById('dob').value = roll_no;
+		document.getElementById('student_id').value = id;
 
-}
+	}
+
+	function deleted(elem) {
+		var id = elem.id;
+		var MSG = bootbox.confirm({
+			message: 'Are you sure you want to delete this record?',
+			buttons: { confirm: { label: 'Confirm', className: 'btn-danger' }, cancel: { label: 'Cancel', className: 'btn-success' } },
+			callback: function (result) {
+				if (result) {
+					axios.delete('https://pacific-coast-71393.herokuapp.com/user/' + id)
+						.then(function (response) {
+							console.log(response);
+							alert("record deleted");
+							get_all();
+						}).catch(function (error) {
+							console.log(error);
+						})
+				}
+			}
+		});
+	}
+
+
 </script>
+
 </html>
