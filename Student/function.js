@@ -1,7 +1,29 @@
 window.onload = function () {
-    let student_id = window.location.search.replace('?id=','');
-    if(student_id != ''){
+    let student_id = window.location.search.replace('?id=', '');
+    if (student_id != '') {
         document.getElementById('student_id').value = student_id
+        axios.get('https://pacific-coast-71393.herokuapp.com/user/' + student_id)
+            .then(function (response) {
+                console.log(response);
+                document.getElementById('student_name').value = response.data.student_name;
+                document.getElementById('father_name').value = response.data.father_name;
+                document.getElementById('age').value = response.data.age;
+                document.getElementById('mobile').value = response.data.mobile;
+                document.getElementById('email').value = response.data.email;
+                var date = Date(response.data.dob);
+                date = moment(date).format('yyyy/mm/dd');
+                document.getElementById('dob').value = response.data.dob;
+                var gender = response.data.gender;
+                if (gender == 'Male') {
+                    document.getElementById('male').value.checked
+                    document.getElementById('female').value.unchecked
+                } else {
+                    document.getElementById('female').checked
+                    document.getElementById('male').unchecked
+                }
+            }).catch(function (error) {
+                console.log(error);
+            })
     }
 
 };
@@ -30,12 +52,12 @@ function post_create() {
 
     axios.post('https://pacific-coast-71393.herokuapp.com/user', {
         student_name: student_name,
-        father_name: father_name, 
-        age: age, 
+        father_name: father_name,
+        age: age,
         dob: dob,
-        mobile:mobile,
-        email:email,
-        gender:gender
+        mobile: mobile,
+        email: email,
+        gender: gender
     }).then(function (response) {
         console.log(response);
         alert(response.data);
