@@ -1,3 +1,10 @@
+window.onload = function () {
+    let student_id = window.location.search.replace('?id=','');
+    if(student_id != ''){
+        document.getElementById('student_id').value = student_id
+    }
+
+};
 function save() {
     let student_id = document.getElementById('student_id').value;
     if (student_id != "") {

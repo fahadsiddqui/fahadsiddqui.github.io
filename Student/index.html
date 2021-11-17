@@ -72,7 +72,7 @@
 					$html += '<td class="s-td" id="dob_' + $id + '">' + data.gender + '</td>';
 					$html += '<td class="s-td" id="dob_' + $id + '">' + data.mobile + '</td>';
 					$html += '<td class="s-td" id="dob_' + $id + '">' + data.email + '</td>';
-					$html += '<td class="s-td"><a href="javascript:void(0)" class="btn text-warning btn-sm" onclick="get_record(this)" id=' + $id + '><i class="btn-icon fas fa-edit"></i></a>';
+					$html += '<td class="s-td"><a href="javascript:void(0)" class="btn text-warning btn-sm" onclick="window.location.href=\'form.html?id='+$id+'\'" id=' + $id + '><i class="btn-icon fas fa-edit"></i></a>';
 					$html += '<a href="javascript:void(0)" class="btn text-danger btn-sm" onclick="deleted(this)" id=' + $id + '><i class="btn-icon fas fa-times"></i></a></td>';
 					$html += '</tr>';
 				})
