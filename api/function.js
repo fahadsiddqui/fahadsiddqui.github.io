@@ -9,7 +9,7 @@ function post_create() {
     }).then(function (response) {
         console.log(response);
         alert(response.data);
-
+        get_all();
         document.getElementById('student_name').value = '';
         document.getElementById('father_name').value='';
         document.getElementById('age').value='';
