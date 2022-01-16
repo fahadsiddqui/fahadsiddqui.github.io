@@ -143,6 +143,7 @@ function get_skill(){
                 $html += '<td>'+data.email+'</td>';
 
                 data.items.forEach(function(item){
+                    console.log("items ",item);
                     $cart += item.quantity +' '+item.dishName+', ';        
                 })
                 $html += '<td>'+$cart+'</td>';
