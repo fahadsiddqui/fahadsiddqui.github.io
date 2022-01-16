@@ -128,6 +128,32 @@ function get_skill(){
     .then(function(){
     });
     }
+
+
+    function get_cart(){
+        axios.get('https://pacific-coast-71393.herokuapp.com/carts')
+        .then(function(response){
+            console.log(response);
+            $html ='';
+            response.data.forEach(function(data){
+                console.log("Cart ",data);
+                $html+='<tr>';
+                $html += '<td>'+data.customerName+'</td>';
+                $html += '<td>'+data.email+'</td>';
+                $html += '<td>'+data.items+'</td>';
+                $html += '<td>'+data.createdOn+'</td>';
+                $html+='</tr>';
+            })
+            document.getElementById('tblCart').innerHTML = $html;
+        })
+        .catch(function(error){
+            console.log(error)
+        })
+        .then(function(){
+        });
+        }
+    
+
     window.onload = function () {
     get_skill();
     get_order();
