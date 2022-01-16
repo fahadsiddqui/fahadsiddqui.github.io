@@ -135,12 +135,17 @@ function get_skill(){
         .then(function(response){
             console.log("Carts Response",response);
             $html ='';
+            $cart = '';
             response.data.forEach(function(data){
                 console.log("Cart ",data);
                 $html+='<tr>';
                 $html += '<td>'+data.customerName+'</td>';
                 $html += '<td>'+data.email+'</td>';
-                $html += '<td>'+data.items+'</td>';
+
+                data.items.forEach(function(item){
+                    $cart += item.quantity +' '+item.dishName+', ';        
+                })
+                $html += '<td>'+$cart+'</td>';
                 $html += '<td>'+data.createdOn+'</td>';
                 $html+='</tr>';
             })
