@@ -88,10 +88,10 @@ axios.delete('http://pacific-coast-71393.herokuapp.com/user/'+id)
 function get_skill(){
     axios.get('https://pacific-coast-71393.herokuapp.com/usages')
     .then(function(response){
-        console.log(response);
+        //console.log(response);
         $html ='';
         response.data.forEach(function(data){
-            console.log(data);
+            //console.log(data);
             $html+='<tr>';
             $html += '<td>'+data.skillName+'</td>';
             $html += '<td>'+data.clientName+'</td>';
@@ -109,10 +109,10 @@ function get_skill(){
     function get_order(){
     axios.get('https://pacific-coast-71393.herokuapp.com/orders')
     .then(function(response){
-        console.log(response);
+        console.log("Orders : ",response);
         $html ='';
         response.data.forEach(function(data){
-            console.log(data);
+            console.log("ORders data :",data);
             $html+='<tr>';
             $html += '<td>'+data.userName+'</td>';
             $html += '<td>'+data.email+'</td>';
@@ -133,7 +133,7 @@ function get_skill(){
     function get_cart(){
         axios.get('https://pacific-coast-71393.herokuapp.com/carts')
         .then(function(response){
-            console.log(response);
+            console.log("Carts Response",response);
             $html ='';
             response.data.forEach(function(data){
                 console.log("Cart ",data);
