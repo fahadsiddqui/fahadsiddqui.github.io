@@ -157,4 +157,5 @@ function get_skill(){
     window.onload = function () {
     get_skill();
     get_order();
+    get_cart();
     }
